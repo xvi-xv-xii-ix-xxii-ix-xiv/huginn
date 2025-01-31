@@ -1,4 +1,4 @@
-use huggin::{
+use huginn::{
     validation::{sanitize_and_validate, Validator},
     SecurityConfig, ValidationError,
 };
@@ -154,7 +154,7 @@ fn main() {
 
 fn print_result<T: std::fmt::Display>(
     input: &str,
-    result: Result<huggin::validation::SanitizedInput<T>, ValidationError>,
+    result: Result<huginn::validation::SanitizedInput<T>, ValidationError>,
 ) {
     match result {
         Ok(res) => println!("[OK] '{}' => {}", input, res.cleaned),

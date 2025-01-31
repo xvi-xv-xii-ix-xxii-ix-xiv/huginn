@@ -1,5 +1,5 @@
 use criterion::{black_box, criterion_group, criterion_main, Criterion};
-use huggin::{validation::sanitize_input, SecurityConfig};
+use huginn::{validation::sanitize_input, SecurityConfig};
 use std::time::Duration;
 
 fn bench_sanitization(c: &mut Criterion) {

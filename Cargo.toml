@@ -1,5 +1,5 @@
 [package]
-name = "huggin"
+name = "huginn"
 edition = "2021"
 version = "0.9.0-rc.1"
 authors = ["xvi.xv.xii.ix.xxii.ix.xiv <xvi.xv.xii.ix.xxii.ix.xiv@gmail.com>"]
@@ -13,7 +13,7 @@ keywords = ["security", "validation", "sanitization", "input"]
 categories = ["parsing"]
 
 [lib]
-name = "huggin"
+name = "huginn"
 path = "src/lib.rs"
 
 [dependencies]
