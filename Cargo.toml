@@ -1,0 +1,36 @@
+[package]
+name = "huggin"
+edition = "2021"
+version = "0.9.0-rc.1"
+authors = ["xvi.xv.xii.ix.xxii.ix.xiv <xvi.xv.xii.ix.xxii.ix.xiv@gmail.com>"]
+description = "Secure input validation and sanitization library with extensible architecture"
+license = "MIT"
+repository = "https://github.com/xvi-xv-xii-ix-xxii-ix-xiv/huginn"
+homepage = "https://github.com/xvi-xv-xii-ix-xxii-ix-xiv/huginn"
+documentation = "https://docs.rs/huginn/0.9.0-rc.1"
+readme = "README.md"
+keywords = ["security", "validation", "sanitization", "input"]
+categories = ["parsing"]
+
+[lib]
+name = "huggin"
+path = "src/lib.rs"
+
+[dependencies]
+regex = { version = "1.11.1", features = ["unicode-case"] }
+lazy_static = "1.5"
+thiserror = "2.0.11"
+urlencoding = "2.1.3"
+
+[dev-dependencies]
+tracing = "0.1"
+serde = { version = "1.0", features = ["derive"] }
+criterion = "0.5.1"
+
+[[bench]]
+name = "bench"
+harness = false
+
+[[example]]
+name = "advanced_usage"
+path = "examples/advanced_usage.rs"
