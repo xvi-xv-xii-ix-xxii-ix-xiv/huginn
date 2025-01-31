@@ -38,7 +38,7 @@ huginn = { version = "0.9.0-rc.1", features = ["serde"] }
 ### Basic Validation
 
 ```rust
-use safeinput::{SecurityConfig, ValidationError, validation::{Validator, sanitize_and_validate}};
+use huginn::{SecurityConfig, ValidationError, validation::{Validator, sanitize_and_validate}};
 
 struct EmailValidator;
 
