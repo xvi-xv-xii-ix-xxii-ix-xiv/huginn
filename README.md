@@ -1,7 +1,7 @@
 # 🛡️ Huginn - Secure Input Validation Library for Rust
 
 [![Crates.io](https://img.shields.io/crates/v/huginn.svg)](https://crates.io/crates/huginn)
-[![Docs.rs](https://docs.rs/huginn/badge.svg)](https://docs.rs/huginn)
+[![Docs.rs](https://docs.rs/huginn/badge.svg)](https://docs.rs/huginn/latest/huginn/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A high-performance, thread-safe input validation library with multi-level security checks
