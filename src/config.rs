@@ -2,7 +2,6 @@ use lazy_static::lazy_static;
 use regex::Regex;
 use std::{collections::HashSet, sync::Arc};
 
-// Предварительно компилируем регулярные выражения
 lazy_static! {
     static ref DEFAULT_PATTERNS: Vec<Regex> = {
         vec![
@@ -19,7 +18,7 @@ pub struct SecurityConfig {
     /// Set of forbidden characters
     pub forbidden_chars: Arc<HashSet<char>>,
     /// Compiled regular expressions for blocking dangerous patterns
-    pub blocked_patterns: Arc<Vec<Regex>>, // Сделать поле публичным
+    pub blocked_patterns: Arc<Vec<Regex>>,
 }
 
 impl Default for SecurityConfig {
