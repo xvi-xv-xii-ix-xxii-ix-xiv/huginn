@@ -1,7 +1,7 @@
 [package]
 name = "huginn"
 edition = "2021"
-version = "0.9.0-rc.1"
+version = "1.0.0"
 authors = ["xvi.xv.xii.ix.xxii.ix.xiv <xvi.xv.xii.ix.xxii.ix.xiv@gmail.com>"]
 description = "Secure input validation and sanitization library with extensible architecture"
 license = "MIT"
@@ -17,10 +17,14 @@ name = "huginn"
 path = "src/lib.rs"
 
 [dependencies]
-regex = { version = "1.11.1", features = ["unicode-case"] }
+regex = "1.11"
 lazy_static = "1.5"
-thiserror = "2.0.11"
-urlencoding = "2.1.3"
+thiserror = "1.0"
+urlencoding = "2.1"
+rayon = "1.10"
+teloxide = "0.15"
+async-trait = "0.1.86"
+tokio = { version = "1.44.2", features = ["full"] }
 
 [dev-dependencies]
 tracing = "0.1"
@@ -34,3 +38,7 @@ harness = false
 [[example]]
 name = "advanced_usage"
 path = "examples/advanced_usage.rs"
+
+[[example]]
+name = "telegram_bot_example"
+path = "examples/telegram_bot_example.rs"

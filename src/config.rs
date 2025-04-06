@@ -5,9 +5,16 @@ use std::{collections::HashSet, sync::Arc};
 lazy_static! {
     static ref DEFAULT_PATTERNS: Vec<Regex> = {
         vec![
-            Regex::new(r"(?i)(drop\s+table|delete\s+from|insert\s+into|select\s+\*)").unwrap(),
-            Regex::new(r"(\.\./|\\x[0-9a-f]{2}|<script>|javascript:).*").unwrap(),
-            Regex::new(r"(?:%[0-9a-fA-F]{2})+").unwrap(),
+            // SQL Injection
+            Regex::new(r"(?i)(drop\s+table|delete\s+from|insert\s+into|select\s+\*|union\s+all|update\s+.*\s+set|--|;|\bexec\b)").unwrap(),
+            // XSS
+            Regex::new(r"(?i)(<script>|javascript:|on\w+\s*=|alert\(|eval\(|document\.|window\.)").unwrap(),
+            // Path Traversal
+            Regex::new(r"(\.\./|\.\.\\|%2e%2e%2f|%2e%2e%5c)").unwrap(),
+            // Encoded attacks
+            Regex::new(r"(?:%[0-9a-fA-F]{2}){2,}").unwrap(),
+            // Command Injection
+            Regex::new(r"(?i)(\||&&|;|`|\$\(|\bexec\b|\bsystem\b|\brm\b|\bdel\b)").unwrap(),
         ]
     };
 }
